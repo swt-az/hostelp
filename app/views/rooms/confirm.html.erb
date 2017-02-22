@@ -1,0 +1,35 @@
+<%= form_for [@user, @room] do |f| %>
+  <div>
+    部屋の名前: <%= @room.room_name %>
+    <%= f.hidden_field :room_name %>
+  </div>
+  <div>
+    郵便番号: <%= @room.zip_code %>
+    <%= f.hidden_field :zip_code %>
+  </div>
+  <div>
+    住所（英語）: <%= @room.address_en %>
+    <%= f.hidden_field :address_en %>
+  </div>
+  <div>
+    住所（日本語）: <%= @room.address_jp %>
+    <%= f.hidden_field :address_jp %>
+  </div>
+  <div>
+    部屋番号: <%= @room.room_no %>
+    <%= f.hidden_field :room_no %>
+  </div>
+  <div>
+    パスワード: <%= @room.password %>
+    <%= f.hidden_field :password %>
+  </div>
+  <div>
+    <p>上記の内容で良ければ表題になる写真を投稿しましょう。</p>
+    <p>修正したい場合はブラウザの「戻る」ボタンで戻ってください。</p>
+    <%= f.label :photo, "表題写真" %><br>
+    <%= f.file_field :photo %><br>
+  </div>
+  <div class="actions">
+    <%= f.submit 'create!' %>
+  </div>
+<% end %>

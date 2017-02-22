@@ -1,0 +1,18 @@
+<h1>Hostelp</h1>
+
+      <% if user_signed_in? %>
+        <div>
+          <span><p><%= current_user.nickname %>さんおかえりなさい</p>
+            <ul>
+              <li>
+                <a href="/users/<%= current_user.id %>">マイページ</a>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>
+          </span>
+        </div>
+      <% end %>
+
+      <div>
+        <p>ここにお知らせとかを書いていく。</p>
+      </div>

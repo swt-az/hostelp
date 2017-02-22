@@ -1,0 +1,16 @@
+    <div>
+<p>写真が追加されました！</p>
+</div>
+
+<div>
+  <% @items.each do |ite| %>
+    <%= ite.photo_no %><BR>
+    <%= ite.description %><BR>
+    <%= image_tag ite.image.url, :width => '400', :height => '280' %><BR>
+  <% end %>
+</div>
+
+<div>
+<a href="/rooms/<%= @item.room_no %>/items/new">写真の追加</a><br>
+<a href="/rooms/<%= @item.room_no %>">プレビューへ</a>
+</div>

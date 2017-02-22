@@ -1,0 +1,33 @@
+<h1>これはプレビュー画面です。</h1>
+<a href="/users/<%= current_user.id%>">マイページへ戻る</a>
+
+<div><!-- 登録済みの部屋一覧 -->
+<h2>基本情報</h2>
+  <a href="/rooms/<%= params[:id] %>/edit">基本情報編集</a>
+  <h3>部屋の名前：<%= @room.room_name %></h3><br>
+  <%= @room.zip_code %><br>
+  <%= @room.address_en %><br>
+</div>
+
+<p>
+   <strong>写真</strong><br>
+   <%= image_tag @room.photo.url(:medium) %>
+</p>
+
+<div>
+<p>ゲスト用URL（このURLをコピーしてゲストにお送りください。）</p> 
+<p>localhost:3000/rooms/<%= current_user.nickname %>/<%= @room.id %></p>
+</div>
+<div><!-- ここから道案内 -->
+<h2>道案内</h2>
+  <%= link_to '写真追加', "#{@room.id}/items/new" %><BR>
+ <% @items.each do |item| %>
+      <tr>
+        <td><%= item.description %></td><br>
+        <td><%= image_tag item.image.url, :width => '400', :height => '280' %></td><br>
+        <td><a href="/rooms/<%= @room.id %>/items/<%= item.id %>/edit">編集</a></td>
+        <td><%= link_to '削除', "/rooms/#{@room.id}/items/#{item.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
+      </tr>
+    <% end %>
+  </div>
+  

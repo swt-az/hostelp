@@ -1,0 +1,26 @@
+ここに編集画面
+
+<div><!-- 登録済みの部屋一覧 -->
+  <%= @room.room_name %><br>
+  <%= @room.zip_code %><br>
+  <%= @room.address_en %><br>
+</div>
+
+
+<%= form_for @room do |f| %>
+  <div>
+    <%= f.label :room_name, "部屋の名前" %><BR>
+    <%= f.text_field :room_name %><BR>
+    <%= image_tag @room.photo.url(:medium) %><BR>
+    <%= f.label :photo, "写真" %><BR>
+    <%= f.file_field :photo %><BR>
+   
+  </div>
+  <div>
+  <%= f.submit "送信", class: "btn btn-primary withripple" %>
+  </div>
+  
+<% end %>
+
+
+

@@ -1,0 +1,18 @@
+ゲスト閲覧画面
+
+<div><!-- 登録済みの部屋一覧 -->
+  <%= @room.room_name %><br>
+  <%= @room.zip_code %><br>
+  <%= @room.address_en %><br>
+  <%= image_tag @room.photo.url(:medium) %>
+</div>
+
+<div><!-- ここから道案内 -->
+<p>道案内</p>
+ <% @items.each do |item| %>
+      <tr>
+        <td><%= item.description %></td><br>
+        <td><%= image_tag item.image.url, :width => '400', :height => '280' %></td><br>
+      </tr>
+    <% end %>
+  </div>

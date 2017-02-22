@@ -1,0 +1,15 @@
+<%= form_for @direction do |f| %>
+  <div>
+    <%= f.label :photo_no, "写真番号" %><br>
+    <%= f.text_field :photo_no %><br>
+    <%= f.label :text, "説明文" %><br>
+    <%= f.text_field :text %><br>
+  </div>
+
+  <div>
+  <%= f.submit "送信", class: "btn btn-primary withripple" %>
+  </div>
+
+  
+
+<% end %>

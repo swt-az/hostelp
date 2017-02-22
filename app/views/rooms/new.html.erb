@@ -1,0 +1,25 @@
+<h1>STEP1 -基本情報入力-</h1>
+
+<%= form_for @room, url:{action: 'confirm'} do |f| %>
+  <div>
+    <%= f.label :room_name, "部屋の名前" %><br>
+    <%= f.text_field :room_name, placeholder: '例：新宿のお部屋' %><br>
+    <%= f.label :zip_code, "郵便番号" %><br>
+    <%= f.text_field :zip_code, placeholder: '例：123-4567' %><br>
+    <%= f.label :address_en, "住所（英語）" %><br>
+    <%= f.text_field :address_en, placeholder: '例：1-1-1, Shinjuku' %><br>
+    <%= f.label :address_jp, "住所（日本語）" %><br>
+    <%= f.text_field :address_jp, placeholder: '例：新宿区１−１−１' %><br>
+    <%= f.label :room_no, "部屋番号" %><br>
+    <%= f.text_field :room_no, placeholder: '例：１０１号室' %><br>
+    <%= f.label :password, "パスワード" %><br>
+    <%= f.text_field :password, placeholder: 'お客様がHPを見るためのPW' %><br>
+
+  </div>
+<!--   <div class="actions">
+    <%= f.submit %>
+  </div> -->
+  <div>
+  <%= f.submit "送信", class: "btn btn-primary withripple" %>
+  </div>
+<% end %>

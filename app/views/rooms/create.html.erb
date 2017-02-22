@@ -1,0 +1,9 @@
+<p>投稿完了しました。</p>
+<div><!-- 登録済みの部屋一覧 -->
+  <%= @room.room_name %><br>
+  <%= @room.room_no %><br>
+   <%= image_tag @room.photo.url(:medium) %>
+  
+</div>
+
+<a href="rooms/<%= @room.id %>/items/new">STEP2へ</a>

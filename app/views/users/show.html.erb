@@ -1,0 +1,23 @@
+<h1><%= current_user.nickname %>さんのマイページです</h1>
+  
+  <div><!-- 登録済みの部屋一覧 -->
+    <% @rooms.each do |room| %>
+      <p><%= @number %>.名前：<%= room.room_name %></p>
+      <p><%= image_tag room.photo.url(:medium) %>
+      <p>住所：<%= room.address_en %></p>
+      <p>部屋番号：<%= room.room_no %></p>
+      <a href="/rooms/<%= room.id %>">プレビュー＆編集</a>
+
+
+      <%= link_to '削除', "/rooms/#{room.id}", method: :delete, data: { confirm: 'Are you sure?' } %><br>
+      <% @number += 1 %>
+
+    <% end %>
+  </div>
+
+  <div>
+    <% if @number <= current_user.qty %>
+      <a href="/rooms/new">新規room作成</a>
+    <% end %>
+  </div>
+<!--Room数が上限以上だった時に非表示にするif 分。user.rooms.count -->
