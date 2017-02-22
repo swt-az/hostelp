@@ -52,3 +52,4 @@ end
   gem 'paperclip'
   gem 'carrierwave'
   gem 'fog', require: 'fog/aws'
+  gem 'rails_12factor'
