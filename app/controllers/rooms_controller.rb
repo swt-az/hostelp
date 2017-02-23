@@ -21,11 +21,12 @@ before_action :authenticate_user!, except: :guest_show
   end
 
   def create
-    # binding.pry
+
     @room = Room.new(create_params)
     @room.user_id   = current_user.id
     @room.user_name = current_user.nickname
     @room.save
+        # binding.pry
   end
 
 
@@ -65,11 +66,11 @@ before_action :authenticate_user!, except: :guest_show
 
   private
     def create_params
-      params.require(:room).permit(:room_name, :room_no, :photo, :zip_code, :address_en, :address_jp, :password,)
+      params.require(:room).permit(:room_name, :room_no, :t_photo, :zip_code, :address_en, :address_jp, :password,)
     end
 
     def update_params
-      params.require(:room).permit(:room_name, :photo)
+      params.require(:room).permit(:room_name, :t_photo)
     end
 
     # def direction_params

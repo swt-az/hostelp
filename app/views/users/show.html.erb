@@ -3,9 +3,9 @@
   <div><!-- 登録済みの部屋一覧 -->
     <% @rooms.each do |room| %>
       <p><%= @number %>.名前：<%= room.room_name %></p>
-      <p><%= image_tag room.photo.url(:medium) %>
       <p>住所：<%= room.address_en %></p>
       <p>部屋番号：<%= room.room_no %></p>
+      <%= image_tag room.t_photo.url %><BR>
       <a href="/rooms/<%= room.id %>">プレビュー＆編集</a>
 
 

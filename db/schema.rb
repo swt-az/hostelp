@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220123801) do
+ActiveRecord::Schema.define(version: 20170223114941) do
 
   create_table "directions", force: :cascade do |t|
     t.integer  "photo_no",   limit: 4
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20170220123801) do
     t.datetime "photo_updated_at"
     t.integer  "password",           limit: 4
     t.integer  "user_id",            limit: 4
+    t.string   "t_photo",            limit: 255
   end
 
   create_table "users", force: :cascade do |t|

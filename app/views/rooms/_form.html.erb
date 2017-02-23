@@ -1,0 +1,10 @@
+<%= form_for [@room] do |f| %>
+
+  <div class="field">
+    <%= f.label :t_photo, "Airbnbのタイトルのような写真を入れましょう" %><br>
+    <%= f.file_field :t_photo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

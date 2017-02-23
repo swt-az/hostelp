@@ -26,10 +26,11 @@
   <div>
     <p>上記の内容で良ければ表題になる写真を投稿しましょう。</p>
     <p>修正したい場合はブラウザの「戻る」ボタンで戻ってください。</p>
-    <%= f.label :photo, "表題写真" %><br>
-    <%= f.file_field :photo %><br>
+  <div class="field">
+    <%= f.label :t_photo, "Airbnbのタイトルのような写真を入れましょう" %><br>
+    <%= f.file_field :t_photo %>
   </div>
-  <div class="actions">
-    <%= f.submit 'create!' %>
+    <div class="actions">
+    <%= f.submit %>
   </div>
 <% end %>

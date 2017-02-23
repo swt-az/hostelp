@@ -7,16 +7,17 @@
   <h3>部屋の名前：<%= @room.room_name %></h3><br>
   <%= @room.zip_code %><br>
   <%= @room.address_en %><br>
+  <%= image_tag @room.t_photo.url %><BR>
 </div>
 
 <p>
    <strong>写真</strong><br>
-   <%= image_tag @room.photo.url(:medium) %>
+
 </p>
 
 <div>
 <p>ゲスト用URL（このURLをコピーしてゲストにお送りください。）</p> 
-<p>localhost:3000/rooms/<%= current_user.nickname %>/<%= @room.id %></p>
+<p>https://host-elp.herokuapp.com//rooms/<%= current_user.nickname %>/<%= @room.id %></p>
 </div>
 <div><!-- ここから道案内 -->
 <h2>道案内</h2>

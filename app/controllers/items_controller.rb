@@ -37,6 +37,7 @@ class ItemsController < ApplicationController
     @item.room_no = params[:room_id]
     @item.save
     @items = Item.where(room_no: @item.room_no)
+    # binding.pry
   end
 
   # PATCH/PUT /items/1
