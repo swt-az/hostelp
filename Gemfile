@@ -55,4 +55,4 @@ end
   gem 'rails_12factor'
 
 source "https://rubygems.org"
-ruby "2.3.1p112"
+ruby "2.3.1"
