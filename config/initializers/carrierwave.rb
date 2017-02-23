@@ -12,7 +12,7 @@ CarrierWave.configure do |config|
         config.fog_directory  = 'tomoki-upload'
         config.asset_host = 'https://s3.amazonaws.com/tomoki-upload'
     when 'production'
-        config.fog_directory  = 'tomoki-uploqd'
+        config.fog_directory  = 'tomoki-upload'
         config.asset_host = 'https://s3.amazonaws.com/tomoki-upload'
     end
 end
