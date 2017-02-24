@@ -11,7 +11,7 @@
   <div>
     <%= f.label :room_name, "部屋の名前" %><BR>
     <%= f.text_field :room_name %><BR>
-    <%= image_tag @room.photo.url(:medium) %><BR>
+    <%= image_tag @room.t_photo.url %><BR>
     <%= f.label :photo, "写真" %><BR>
     <%= f.file_field :photo %><BR>
    

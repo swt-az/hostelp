@@ -38,7 +38,7 @@ before_action :authenticate_user!, except: :guest_show
   def guest_show
     user = params[:user_name]
     id = params[:id]
-    @room = Room.where(user_name: user).first(id).last
+    @room = Room.find(id)
     @items = Item.where(user_name: user, room_no: id).order('photo_no')
   end
 
@@ -46,8 +46,8 @@ before_action :authenticate_user!, except: :guest_show
 
 
   def edit
-    number = params[:id]
-     @room = Room.where(user_name: current_user.nickname).first(number).last
+     id = params[:id]
+     @room = Room.find(id)
   end
 
   def update
