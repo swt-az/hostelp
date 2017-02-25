@@ -2,26 +2,51 @@
 <a href="/users/<%= current_user.id%>">マイページへ戻る</a>
 
 <div><!-- 登録済みの部屋一覧 -->
-<h2>基本情報</h2>
-  <a href="/rooms/<%= params[:id] %>/edit">基本情報編集</a>
-  <h3>部屋の名前：<%= @room.room_name %></h3><br>
-  <%= @room.zip_code %><br>
-  <%= @room.address_en %><br>
-  <%= image_tag @room.t_photo.url %><BR>
+    <h2>基本情報</h2>
+      <a href="/rooms/<%= params[:id] %>/edit">基本情報編集</a>
+  <div>
+    <p>ゲスト用URL（このURLをコピーしてゲストにお送りください。）</p> 
+    <p>https://hostelp.herokuapp.com/rooms/<%= current_user.nickname %>/<%= @room.id %></p>
+  </div>
+  <p>--------------------------------ここからゲストが見る画面-------------------------</p>
+<div id="top">
+  <h1>Welcome to My room!</h1>
+  <h2><%= @room.room_name %></h2>
+  <%= image_tag @room.t_photo.url, :width => '400px', :height => '280px' %>
 </div>
-
-<p>
-   <strong>写真</strong><br>
-
-</p>
+</div>
 
 <div>
-<p>ゲスト用URL（このURLをコピーしてゲストにお送りください。）</p> 
-<p>https://hostelp.herokuapp.com/rooms/<%= current_user.nickname %>/<%= @room.id %></p>
+  <h2>Room menu</h2>
+    <ul>
+      <li><a href="#address">Address</a></li>
+      <li><a href="#htgr">How to get the room</a></li>
+      <li><a href="#htgk">How to get the key</a></li>
+      <li><a href="#aircon">Air conditioner</a></li>
+      <li><a href="#garbage">Garbage</a></li>
+    </ul>
 </div>
-<div><!-- ここから道案内 -->
-<h2>道案内</h2>
-  <%= link_to '写真追加', "#{@room.id}/items/new" %><BR>
+
+<div id="address">
+
+  <h3>Address</h3>
+    <ul>
+      <li>Zip code : <%= @room.zip_code %></li>
+      <li><%= @room.address_en %></li>
+      <li><%= @room.address_jp %></li>
+      <li><a href="<%= @room.google %>" target="_blank">Google Map</a></li>
+    </ul>
+</div>
+
+
+
+<div id="htgr">
+<h3>How to get the Room</h3>
+<%= @room.htgr %><BR>
+<%= image_tag @room.htgr_img.url, :width => '400px', :height => '280px' %><BR>
+
+ <%= link_to '道案内に写真を追加', "#{@room.id}/items/new" %><BR>
+
  <% @items.each do |item| %>
       <tr>
         <td><%= item.description %></td><br>
@@ -30,5 +55,22 @@
         <td><%= link_to '削除', "/rooms/#{@room.id}/items/#{item.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
       </tr>
     <% end %>
-  </div>
-  
+</div>
+
+<div id="htgk">
+  <h3>How to get the key</h3>
+  <%= @room.htgk %><BR>
+  <%= image_tag @room.htgk_img.url, :width => '800px', :height => '560px' %><BR>
+</div>
+
+<div id="aircon">
+  <h3>Air conditioner</h3>
+  <%= image_tag @room.aircon.url, :width => '800px', :height => '560px' %><BR>
+</div>
+
+<div id="garbage">
+  <h3>Garbage rule</h3>
+    <p>IMPORTANT!</p>
+      <p>PLEASE DO NOT throgh Garbages on wrong day, please check this or just keep it in the room! Thanks!</p>
+  <%= image_tag @room.garbage.url, :width => '800px', :height => '560px' %><BR>
+</div>

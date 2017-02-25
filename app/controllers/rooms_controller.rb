@@ -66,11 +66,11 @@ before_action :authenticate_user!, except: :guest_show
 
   private
     def create_params
-      params.require(:room).permit(:room_name, :room_no, :t_photo, :zip_code, :address_en, :address_jp, :password,)
+      params.require(:room).permit(:room_name, :room_no, :t_photo, :zip_code, :address_en, :address_jp, :password, :htgr, :htgk, :gmap, :aircon, :garbage, :htgr_img, :htgk_img, :google)
     end
 
     def update_params
-      params.require(:room).permit(:room_name, :t_photo)
+      params.require(:room).permit(:room_name, :room_no, :t_photo, :zip_code, :address_en, :address_jp, :password, :htgr, :htgk, :gmap, :aircon, :garbage, :htgr_img, :htgk_img, :google)
     end
 
     # def direction_params

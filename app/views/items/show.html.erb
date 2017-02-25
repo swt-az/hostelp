@@ -4,7 +4,6 @@
 
 <div>
   <% @items.each do |ite| %>
-    <%= ite.photo_no %><BR>
     <%= ite.description %><BR>
     <%= image_tag ite.image.url, :width => '400', :height => '280' %><BR>
   <% end %>

@@ -14,6 +14,13 @@
     <%= f.text_field :room_no, placeholder: '例：１０１号室' %><br>
     <%= f.label :password, "パスワード" %><br>
     <%= f.text_field :password, placeholder: 'お客様がHPを見るためのPW' %><br>
+    <%= f.label :htgr, "How to get the room" %><br>
+    <%= f.text_field :htgr, placeholder: '部屋への行き方を記入。' %><br>
+    <%= f.label :htgk, "How to get the key" %><br>
+    <%= f.text_field :htgk, placeholder: '鍵のとり方を記入' %>
+    ※部屋への行き方と鍵のとり方は次の画面で画像も投稿可能です。<br>
+    <%= f.label :google, "Google mapへリンクを貼ります。" %><br>
+    <%= f.text_field :google, placeholder: 'Google mapへリンク。' %><br>
 
   </div>
 <!--   <div class="actions">

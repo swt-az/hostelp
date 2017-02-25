@@ -1,20 +1,49 @@
-ここに編集画面
-
-<div><!-- 登録済みの部屋一覧 -->
-  <%= @room.room_name %><br>
-  <%= @room.zip_code %><br>
-  <%= @room.address_en %><br>
-</div>
-
-
+<h1>編集画面</h1>
 <%= form_for @room do |f| %>
   <div>
-    <%= f.label :room_name, "部屋の名前" %><BR>
-    <%= f.text_field :room_name %><BR>
-    <%= image_tag @room.t_photo.url %><BR>
-    <%= f.label :photo, "写真" %><BR>
-    <%= f.file_field :photo %><BR>
-   
+      <%= f.label :room_name, "部屋の名前" %><br>
+      <%= f.text_field :room_name, placeholder: '例：新宿のお部屋' %><br>
+      <%= f.label :zip_code, "郵便番号" %><br>
+      <%= f.text_field :zip_code, placeholder: '例：123-4567' %><br>
+      <%= f.label :address_en, "住所（英語）" %><br>
+      <%= f.text_field :address_en, placeholder: '例：1-1-1, Shinjuku' %><br>
+      <%= f.label :address_jp, "住所（日本語）" %><br>
+      <%= f.text_field :address_jp, placeholder: '例：新宿区１−１−１' %><br>
+      <%= f.label :room_no, "部屋番号" %><br>
+      <%= f.text_field :room_no, placeholder: '例：１０１号室' %><br>
+      <%= f.label :password, "パスワード" %><br>
+      <%= f.text_field :password, placeholder: 'お客様がHPを見るためのPW' %><br>
+      <%= f.label :htgr, "How to get the room" %><br>
+      <%= f.text_field :htgr, placeholder: '部屋への行き方を記入。' %><br>
+      <%= f.label :htgk, "How to get the key" %><br>
+      <%= f.text_field :htgk, placeholder: '鍵のとり方を記入' %><BR>
+      ※部屋への行き方と鍵のとり方は次の画面で画像も投稿可能です。<br><BR>
+      <%= f.label :google, "Google mapへリンクを貼ります。" %><br>
+      <%= f.text_field :google, placeholder: 'Google mapへリンク。' %><br>
+  </div>
+
+  <div>
+    <h2>写真の編集</h2>
+    <h3><%= f.label :t_photo, "表題写真" %></h3>
+    <%= image_tag @room.t_photo.url, :width => '400px', :height => '280px' %><BR>
+    <%= f.file_field :t_photo %><BR>
+
+    <h3><%= f.label :htgr_img, "部屋への行き方" %></h3>
+    <%= image_tag @room.htgr_img.url, :width => '400px', :height => '280px' %><BR>
+    <%= f.file_field :htgr_img %><BR>
+
+    <h3><%= f.label :htgk_img, "鍵のとり方" %></h3>
+    <%= image_tag @room.htgk_img.url, :width => '400px', :height => '280px' %><BR>
+    <%= f.file_field :htgk_img %><BR>
+
+    <h3><%= f.label :aircon, "エアコンの使い方" %></h3>
+    <%= image_tag @room.aircon.url, :width => '400px', :height => '280px' %><BR>
+    <%= f.file_field :aircon %><BR>
+
+    <h3><%= f.label :garbage, "ゴミの出し方" %></h3>
+    <%= image_tag @room.garbage.url, :width => '400px', :height => '280px' %><BR>
+    <%= f.file_field :garbage %><BR>
+
   </div>
   <div>
   <%= f.submit "送信", class: "btn btn-primary withripple" %>

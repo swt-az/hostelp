@@ -24,11 +24,37 @@
     <%= f.hidden_field :password %>
   </div>
   <div>
+    How to get the room: <%= @room.htgr %>
+    <%= f.hidden_field :htgr %>
+  </div>
+  <div>
+    How to get the key: <%= @room.htgk %>
+    <%= f.hidden_field :htgk %>
+  </div>
+  <div>
+    Google map: <%= @room.google %>
+    <%= f.hidden_field :google %>
+  </div>
+
+
+
+
+  <div>
     <p>上記の内容で良ければ表題になる写真を投稿しましょう。</p>
     <p>修正したい場合はブラウザの「戻る」ボタンで戻ってください。</p>
   <div class="field">
     <%= f.label :t_photo, "Airbnbのタイトルのような写真を入れましょう" %><br>
-    <%= f.file_field :t_photo %>
+    <%= f.file_field :t_photo %><BR><BR>
+
+    <%= f.label :hgtr_img, "部屋への行き方の画像があれば入れましょう（周辺地図など）" %><br>
+    <%= f.file_field :htgr_img %><BR><BR>
+    
+    <%= f.label :htgk_img, "鍵の開け方の資料を入れましょう。" %><br>
+    <%= f.file_field :htgk_img %><BR><BR>
+    <%= f.label :aircon, "エアコンのガイドを入れましょう。" %><br>
+    <%= f.file_field :aircon %><BR><BR>
+    <%= f.label :garbage, "ゴミの出し方のガイドを入れましょう。" %><br>
+    <%= f.file_field :garbage %>
   </div>
     <div class="actions">
     <%= f.submit %>
