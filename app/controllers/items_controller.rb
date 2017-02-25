@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
   def show
 # binding.pry
     @room = Room.find(params[:room_id])
-    @items = Item.where(room_no:params[:room_id])
+    @items = Item.where(room_no:params[:room_id]).order('photo_no ASC')
   end
 
   # GET /items/new
@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
     @item.user_name = current_user.nickname
     @item.room_no = params[:room_id]
     @item.save
-    @items = Item.where(room_no: @item.room_no)
+    @items = Item.where(room_no: @item.room_no).order('photo_no ASC')
     # binding.pry
   end
 
