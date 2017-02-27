@@ -1,0 +1,73 @@
+h1 {
+  font-size:50px;
+}
+
+h2 {
+  font-size:30px;
+}
+
+h3 {
+  font-size:25px;
+}
+
+.guest {
+  background-color:;
+  width:1000px;
+  margin:0 auto;
+}
+
+.guest p {
+  font-size:18px;
+  margin-left: 15px;
+}
+
+.kihon h2{
+  text-align: left;
+
+}
+
+.top h1, h2 {
+  background-color: ;
+  text-align: center;
+}
+
+.photo {
+  text-align: center;
+  margin:0 0 0 0;
+}
+
+.menu {
+  margin-left:15px;
+}
+
+.menu h2 {
+  text-align: left;
+}
+
+.menu li{
+  font-size: 18px;
+}
+
+.address {
+  margin-left:15px;
+}
+
+.htgr {
+  margin-left:15px;
+}
+
+.htgr p{
+  margin:5px 0 5px 0;
+}
+
+.htgk {
+  margin-left:15px;
+}
+
+.aircon {
+  margin-left:15px;
+}
+
+.garbage {
+  margin-left:15px;
+}
