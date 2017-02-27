@@ -10,6 +10,10 @@ h3 {
   font-size:25px;
 }
 
+.mypage {
+  text-align: left;
+}
+
 .guest {
   width:1000px;
   margin:0 auto;

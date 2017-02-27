@@ -2,7 +2,7 @@
 
   <div><!-- 登録済みの部屋一覧 -->
     <% @rooms.each do |room| %>
-    <h2><%= @number %>.<%= room.room_name %></h2>
+    <h2 class ="mypage"><%= @number %>.<%= room.room_name %></h2>
 
       <%= image_tag room.t_photo.url, :width => '400px', :height => '280px' %><BR>
       <a href="/rooms/<%= room.id %>">プレビュー＆編集</a>
