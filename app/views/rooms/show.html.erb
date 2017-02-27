@@ -1,7 +1,7 @@
 <h1>これはプレビュー画面です。</h1>
 <a href="/users/<%= current_user.id%>">マイページへ戻る</a>
 
-<div><!-- 登録済みの部屋一覧 -->
+<div class="kihon"><!-- 登録済みの部屋一覧 -->
     <h2>基本情報</h2>
       <a href="/rooms/<%= params[:id] %>/edit">基本情報編集</a>
   <div>
@@ -16,7 +16,7 @@
 </div>
 </div>
 
-<div>
+<div class="menu">
   <h2>Room menu</h2>
     <ul>
       <li><a href="#address">Address</a></li>
