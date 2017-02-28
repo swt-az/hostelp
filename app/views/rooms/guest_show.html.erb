@@ -1,7 +1,7 @@
 <div class="guest">
   
   <div class ="top", id="top">
-    <h1>Welcome to <%= current_user.nickname %>'s room!</h1>
+    <h1>Welcome to <%= @room.user_name %>'s room!</h1>
     <h2><%= @room.room_name %></h2>
     <h1><%= image_tag @room.t_photo.url, :width => '400px', :height => '280px' %></h1>
   </div><!-- top -->
