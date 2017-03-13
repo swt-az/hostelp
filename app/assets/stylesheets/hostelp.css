@@ -15,7 +15,7 @@ h3 {
 }
 
 .guest {
-  width:1000px;
+  width:1200px;
   margin:0 auto;
 }
 
@@ -27,6 +27,11 @@ h3 {
 .kihon h2{
   text-align: left;
 
+}
+
+.top {
+  width: 900px;
+  margin: 0 auto;
 }
 
 .top h1, h2 {
@@ -72,4 +77,31 @@ h3 {
 
 .garbage {
   margin-left:15px;
+}
+
+.preview {
+  width: 1200px;
+    float: left;
+}
+
+.preview2 {
+  width: 850px;
+  float:left;
+  margin-left: 50px;
+}
+
+.twitter {
+  height: 550px;
+  width: 220px;
+  float:left;
+}
+
+.guest {
+  width: 1200px;
+}
+
+.guest2 {
+  width: 850px;
+  float:left;
+  margin-left: 50px;
 }

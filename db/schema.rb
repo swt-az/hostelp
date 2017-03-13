@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224060126) do
+ActiveRecord::Schema.define(version: 20170304020350) do
 
   create_table "directions", force: :cascade do |t|
     t.integer  "photo_no",   limit: 4
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20170224060126) do
     t.string   "htgr_img",           limit: 255
     t.string   "htgk_img",           limit: 255
     t.text     "google",             limit: 65535
+    t.text     "twitter",            limit: 65535
   end
 
   create_table "users", force: :cascade do |t|

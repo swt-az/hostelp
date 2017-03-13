@@ -1,63 +1,71 @@
 <div class="guest">
   
-  <div class ="top", id="top">
-    <h1>Welcome to <%= @room.user_name %>'s room!</h1>
-    <h2><%= @room.room_name %></h2>
-    <h1><%= image_tag @room.t_photo.url, :width => '400px', :height => '280px' %></h1>
-  </div><!-- top -->
+    <div class ="top", id="top">
+      <h1>Welcome to <%= @room.user_name %>'s room!</h1>
+      <h2><%= @room.room_name %></h2>
+      <h1><%= image_tag @room.t_photo.url, :width => '400px', :height => '280px' %></h1>
+    </div><!-- top -->
+  <div class="guest2">
+    <div class="menu">
+      <h2>Room menu</h2>
+        <ul>
+          <li><a href="#address">Address</a></li>
+          <li><a href="#htgr">How to get the room</a></li>
+          <li><a href="#htgk">How to get the key</a></li>
+          <li><a href="#aircon">Air conditioner</a></li>
+          <li><a href="#garbage">Garbage</a></li>
+        </ul>
+    </div><!-- menu -->
 
-  <div class="menu">
-    <h2>Room menu</h2>
-      <ul>
-        <li><a href="#address">Address</a></li>
-        <li><a href="#htgr">How to get the room</a></li>
-        <li><a href="#htgk">How to get the key</a></li>
-        <li><a href="#aircon">Air conditioner</a></li>
-        <li><a href="#garbage">Garbage</a></li>
-      </ul>
-  </div><!-- menu -->
-
-  <div class ="address", id="address">
-    <h3>Address</h3>
-      <ul>
-        <li>Zip code : <%= @room.zip_code %></li>
-        <li><%= @room.address_en %></li>
-        <li><%= @room.address_jp %></li>
-        <li><a href="<%= @room.google %>" target="_blank">Google Map</a></li>
-      </ul>
-  </div><!-- address -->
+    <div class ="address", id="address">
+      <h3>Address</h3>
+        <ul>
+          <li>Zip code : <%= @room.zip_code %></li>
+          <li><%= @room.address_en %></li>
+          <li><%= @room.address_jp %></li>
+          <li><a href="<%= @room.google %>" target="_blank">Google Map</a></li>
+        </ul>
+    </div><!-- address -->
 
 
 
-  <div class="htgr", id="htgr">
-    <h3>How to get the Room</h3>
-    <p><%= @room.htgr %></p><BR>
-    <p>   <%= image_tag @room.htgr_img.url, :width => '400px', :height => '280px' %></p><BR>
+    <div class="htgr", id="htgr">
+      <h3>How to get the Room</h3>
+      <%= simple_format@room.htgr %><BR>
+      <h3>Google map</h3>
+      <%== @room.google %><BR>
+      <h3>Vicinity map</h3>
+      <%= image_tag @room.htgr_img.url, :width => '400px', :height => '280px' %><BR>
+      <h3>Step-by-step direction</h3>
+      <% @items.each do |item| %>
+            
+              <p><%= item.description %></p><br>
+              <p>   <%= image_tag item.image.url, :width => '400', :height => '280' %></p><br>
 
-     <% @items.each do |item| %>
-          
-            <p><%= item.description %></p><br>
-            <p>   <%= image_tag item.image.url, :width => '400', :height => '280' %></p><br>
+            
+        <% end %>
+    </div><!-- htgr -->
 
-          
-      <% end %>
-  </div><!-- htgr -->
+    <div class="htgk", id="htgk">
+      <h3>How to get the key</h3>
+      <p><%= @room.htgk %></p>
+      <h1 class="photo"><%= image_tag @room.htgk_img.url, :width => '800px', :height => '560px' %></h1><BR>
+    </div>
 
-  <div class="htgk", id="htgk">
-    <h3>How to get the key</h3>
-    <p><%= @room.htgk %></p><BR>
-    <h1 class="photo"><%= image_tag @room.htgk_img.url, :width => '800px', :height => '560px' %></h1><BR>
+    <div class="aircon", id="aircon">
+      <h3>Air conditioner</h3>
+      <h1 class="photo"><%= image_tag @room.aircon.url, :width => '800px', :height => '560px' %></h1><BR>
+    </div>
+
+    <div class="garbage", id="garbage">
+      <h3>Garbage rule</h3>
+        <p>IMPORTANT!</p>
+          <p>PLEASE DO NOT throgh Garbages on wrong day, please check this or just keep it in the room! Thanks!</p>
+      <h1 class="photo"><%= image_tag @room.garbage.url, :width => '800px', :height => '560px' %></h1><BR>
+    </div>
+  </div><!-- guest2 -->
+  <div class="twitter">
+    <%== @room.twitter %>
   </div>
 
-  <div class="aircon", id="aircon">
-    <h3>Air conditioner</h3>
-    <h1 class="photo"><%= image_tag @room.aircon.url, :width => '800px', :height => '560px' %></h1><BR>
-  </div>
-
-  <div class="garbage", id="garbage">
-    <h3>Garbage rule</h3>
-      <p>IMPORTANT!</p>
-        <p>PLEASE DO NOT throgh Garbages on wrong day, please check this or just keep it in the room! Thanks!</p>
-    <h1 class="photo"><%= image_tag @room.garbage.url, :width => '800px', :height => '560px' %></h1><BR>
-  </div>
-</div>
+</div><!-- guest -->
